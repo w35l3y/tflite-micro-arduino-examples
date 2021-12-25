@@ -87,6 +87,8 @@ class MicroGraph {
   // Get the resource variables for this TFLM graph.
   MicroResourceVariables* GetResourceVariables() { return resource_variables_; }
 
+  TF_LITE_REMOVE_VIRTUAL_DELETE
+
  private:
   TfLiteContext* context_;
   const Model* model_;
@@ -95,8 +97,6 @@ class MicroGraph {
   int current_subgraph_index_;
   MicroResourceVariables* resource_variables_;
   const flatbuffers::Vector<flatbuffers::Offset<SubGraph>>* subgraphs_;
-
-  TF_LITE_REMOVE_VIRTUAL_DELETE
 };
 
 }  // namespace tflite

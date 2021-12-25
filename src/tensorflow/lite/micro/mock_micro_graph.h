@@ -44,6 +44,8 @@ class MockMicroGraph : public MicroGraph {
     return invoke_counts_[subgraph_idx];
   }
 
+  TF_LITE_REMOVE_VIRTUAL_DELETE
+
  private:
   static constexpr int kMaxSubgraphs = 10;
   SimpleMemoryAllocator* allocator_;
@@ -52,7 +54,6 @@ class MockMicroGraph : public MicroGraph {
   int prepare_count_;
   int free_count_;
   int invoke_counts_[kMaxSubgraphs];
-  TF_LITE_REMOVE_VIRTUAL_DELETE
 };
 
 }  // namespace tflite

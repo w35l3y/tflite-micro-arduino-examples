@@ -29,7 +29,6 @@ class AllOpsResolver : public MicroMutableOpResolver<128> {
  public:
   AllOpsResolver();
 
- private:
   TF_LITE_REMOVE_VIRTUAL_DELETE
 };
 

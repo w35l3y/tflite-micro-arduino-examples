@@ -50,13 +50,13 @@ class RecordingSimpleMemoryAllocator : public SimpleMemoryAllocator {
   TfLiteStatus SetHeadBufferSize(size_t size, size_t alignment) override;
   uint8_t* AllocateFromTail(size_t size, size_t alignment) override;
 
+  TF_LITE_REMOVE_VIRTUAL_DELETE
+
  private:
   size_t requested_head_bytes_;
   size_t requested_tail_bytes_;
   size_t used_bytes_;
   size_t alloc_count_;
-
-  TF_LITE_REMOVE_VIRTUAL_DELETE
 };
 
 }  // namespace tflite
