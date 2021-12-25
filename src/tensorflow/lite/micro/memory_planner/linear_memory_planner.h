@@ -36,13 +36,13 @@ class LinearMemoryPlanner : public MicroMemoryPlanner {
   TfLiteStatus GetOffsetForBuffer(tflite::ErrorReporter* error_reporter,
                                   int buffer_index, int* offset) override;
 
+  TF_LITE_REMOVE_VIRTUAL_DELETE
+
  private:
   static constexpr int kMaxBufferCount = 1024;
   size_t buffer_offsets_[kMaxBufferCount];
   int current_buffer_count_;
   size_t next_free_offset_;
-
-  TF_LITE_REMOVE_VIRTUAL_DELETE
 };
 
 }  // namespace tflite

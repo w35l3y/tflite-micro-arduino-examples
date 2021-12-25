@@ -116,13 +116,13 @@ class NonPersistentMemoryPlannerShim : public MicroMemoryPlanner {
   size_t GetMaximumMemorySize() override;
   int GetBufferCount() override;
 
+  TF_LITE_REMOVE_VIRTUAL_DELETE
+
  private:
   const BufferPlan* buffer_plan_;  // not owned, can't be null
 
   // The number of buffers requested so far. Used for error checking.
   int buffer_request_count_;
-
-  TF_LITE_REMOVE_VIRTUAL_DELETE
 };
 
 }  // namespace tflite

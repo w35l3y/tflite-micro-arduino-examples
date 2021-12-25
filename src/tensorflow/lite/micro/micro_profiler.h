@@ -61,6 +61,8 @@ class MicroProfiler {
   // Separated Value) form.
   void LogCsv() const;
 
+  TF_LITE_REMOVE_VIRTUAL_DELETE
+
  private:
   // Maximum number of events that this class can keep track of. If we call
   // AddEvent more than kMaxEvents number of times, then the oldest event's
@@ -71,8 +73,6 @@ class MicroProfiler {
   int32_t start_ticks_[kMaxEvents];
   int32_t end_ticks_[kMaxEvents];
   int num_events_ = 0;
-
-  TF_LITE_REMOVE_VIRTUAL_DELETE;
 };
 
 #if defined(TF_LITE_STRIP_ERROR_STRINGS)
